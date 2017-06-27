@@ -1,6 +1,6 @@
-class WhiskeyController < ApplicationController
+class Api::V1::WhiskeyController < ApplicationController
     def index
-    	whiskies = Whiskey.all
-        render json: {status: 'SUCCESS', message: 'Loaded all whiskies', data: whiskies}, status: :ok
-    end 
+    	@whiskies = Whiskey.all
+      render json: @whiskies
+    end
 end
