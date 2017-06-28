@@ -6,3 +6,7 @@
 .table  {
   background-color: #70A288;
 }
+
+.table-row:hover  {
+  background-color: #DAB785;
+}

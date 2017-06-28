@@ -23,7 +23,7 @@ class HomePage extends React.Component {
     render()    {
       const whiskies = this.state.whiskies;
        return   (
-         <div className="container">           
+         <div className="container">
            <WhiskeyList whiskies={whiskies}/>
          </div>
        )
