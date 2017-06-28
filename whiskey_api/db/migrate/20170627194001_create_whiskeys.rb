@@ -4,7 +4,7 @@ class CreateWhiskeys < ActiveRecord::Migration[5.0]
       t.string :name
       t.string :distillery
       t.string :origin
-      t.int :proof
+      t.integer :proof
 
       t.timestamps
     end
