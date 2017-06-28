@@ -1,6 +1,7 @@
 var webpack = require('webpack')
 var path = require('path')
 
+
 module.exports = {
   devtool: 'inline-source-map',
   entry: [
@@ -16,13 +17,13 @@ module.exports = {
     extensions: ['.js', '.jsx']
   },
   devServer: {
-    contentBase: path.resolve(__dirname, 'src')
+    contentBase: path.resolve(__dirname, 'dist')
   },
   module: {
     rules: [
             {
               test: /\.css$/,
-              use: ['style-loader css-loader']
+              use: ['style-loader', 'css-loader']
             },
             {
               test: /\.(png|svg|jpg|gif)$/,
@@ -34,8 +35,8 @@ module.exports = {
             },
             {
               test: /\.(js|jsx)$/,
-              exclude: /node_modules/,
-              use: ['babel-loader']
+              exclude: /(node_modules)/,
+              use: ['babel-loader'],
             },
          ]
   },

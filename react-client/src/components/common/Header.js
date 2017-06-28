@@ -2,9 +2,9 @@ import React from 'react';
 
 const Header = () =>  {
   return  (
-    <nav className="navbar navbar-fixed-top">
+    <nav className="navbar header">
       <div className="container">
-        <h1>Have a Drink</h1>
+        <h1 className="text-center">Have a Drink</h1>
       </div>
     </nav>
   )

@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react';
 import axios from 'axios';
+import WhiskeyList from '../whiskeyTable/whiskeyList.js'
 
 class HomePage extends React.Component {
     constructor(props, context) {
@@ -8,15 +9,11 @@ class HomePage extends React.Component {
         this.state = {whiskies: []}
     }
 
-    componentDidMount() {
-      this.getWhiskies()
-    }
-
-    getWhiskies() {
-      axios.get('localhost:3000/api/v1/whiskey')
-        .then(whiskey  => {
-          console.log(whiskey)
-          // this.setState({})
+    componentWillMount() {
+      const self = this
+      axios.get('http://localhost:3000/api/v1/whiskey')
+        .then(res  => {
+          this.setState({whiskies: res.data})
         })
         .catch(err  =>  {
           console.log(err)
@@ -24,10 +21,9 @@ class HomePage extends React.Component {
     }
 
     render()    {
-      const {whiskies} = this.props;
+      const whiskies = this.state.whiskies;
        return   (
-         <div>
-           <p>testestest</p>
+         <div className="container">           
            <WhiskeyList whiskies={whiskies}/>
          </div>
        )

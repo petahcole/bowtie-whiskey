@@ -1,16 +1,15 @@
 import React from 'react';
 import WhiskeyRow from './whiskeyRow';
 
-const WhiskeyList = ({courses})  =>  {
+const WhiskeyList = ({whiskies})  =>  {
   return  (
     <table className="table">
       <thead>
       <tr>
-        <th>&nbsp;</th>
-        <th>Title</th>
-        <th>Author</th>
-        <th>Category</th>
-        <th>Length</th>
+        <th>Name</th>
+        <th>Distillery</th>
+        <th>Origin</th>
+        <th>Proof</th>        
       </tr>
       </thead>
       <tbody>
