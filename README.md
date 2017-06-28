@@ -1,6 +1,6 @@
 This is a simple React/Rails app. The React frontend consumes a Rails JSON api with whiskey data from a MySQL database.
 
-
+You will need to open two tabs in your terminal. One for the frontend and one for the backend.
 To get the frontend running, clone the repo locally and run the following commands:
 
 ```
