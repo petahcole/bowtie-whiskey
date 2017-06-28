@@ -12,12 +12,15 @@ module.exports = {
     publicPath: '/',
     filename: 'bundle.js'
   },
+  resolve: {
+    extensions: ['.js', '.jsx']
+  },
   devServer: {
     contentBase: path.resolve(__dirname, 'src')
   },
   module: {
     rules: [
-             {
+            {
               test: /\.css$/,
               use: ['style-loader css-loader']
             },
@@ -28,7 +31,12 @@ module.exports = {
             {
               test: /\.(woff|woff2|eot|ttf|otf)$/,
               use: ['file-loader']
-            }
+            },
+            {
+              test: /\.(js|jsx)$/,
+              exclude: /node_modules/,
+              use: ['babel-loader']
+            },
          ]
   },
 }
